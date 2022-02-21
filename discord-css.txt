@@ -1,10 +1,10 @@
 @-moz-document url-prefix("https://discord.com/channels/") {
 div[class^="reactionInner"] > img.emoji, .emoji {
-    min-width:2rem;
-    min-height:2rem;
+    min-width:2em;
+    min-height:2em;
 }
 
-@media only screen and (max-width: 80em) {
+@media only screen and (max-width: 80rem) {
     div[class^=sidebar]:not(:hover) {
         max-width: 7em;
     }
@@ -29,4 +29,23 @@ div[class^="reactionInner"] > img.emoji, .emoji {
     }
 }
 
+@media only screen and (max-height: 40rem) {
+    div[class^=sidebar]/*:not(:hover)*/ li[class*=containerDefault] > div {
+        max-height: 1.75em;
+    }
+}
+
+/* hide channels when not hovering */
+div[class^=sidebar]:not(:hover) li[class*=containerDefault] > div:not([class*= modeUnread-]):not([class*= modeSelected-]):not([class*= clickable-]),
+div[class^=sidebar]:not(:hover) li[class*=containerDefault] > div[class*= muted-]{
+    display: none;
+    /* option: instead make them add spacing */
+    /*max-height: 0.2em;
+    visibility: hidden;*/
+}
+
+/* this forces the sidebar to scroll up when hiding the channels */
+div[class^=sidebar]:not(:hover) > nav > div[class^=scroller-] > ul {
+    height: unset !important;
+}
 }
