@@ -29,6 +29,25 @@ div[class^="reactionInner"] > img.emoji, .emoji {
     }
 }
 
+@media only screen and (max-width: 40rem) {
+    div[class^=sidebar]:not(:hover) {
+        max-width: 5em;
+    }
+    div[class^=sidebar]:not(:hover) div[class^=iconContainer-] svg {
+        max-width: 0.5em;
+    }
+    nav[aria-label*=Servers]:not(:hover) {
+        max-width: 2em;
+    }
+    div[class^=content-] > div[class^=container-]:not(:hover) {
+        max-width: 3em;
+    }
+    div[class^=content-] > div[class^=container-]:not(:hover) div[class^=member-] div[class^=layout-] {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 @media only screen and (max-height: 40rem) {
     div[class^=sidebar]/*:not(:hover)*/ li[class*=containerDefault] > div {
         max-height: 1.75em;
